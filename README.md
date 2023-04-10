@@ -20,3 +20,4 @@
 ### image
 
 大部分 `image `资源存放在该文件中。
+**Markdown** 不支持 tif。
