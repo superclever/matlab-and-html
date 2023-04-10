@@ -215,6 +215,7 @@
   cursor: pointer;
   border-radius: 50%;
   overflow: hidden;
+  background-color: lightcoral;
 }
 
 #bacBut{
