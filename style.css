@@ -8,6 +8,8 @@
   height: 100%;
   /* background-color: aqua; */
   background-image: url(/fantasy\ World\ Tree.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -222,3 +224,6 @@
   background-image: none;
 }
 
+#fileInput{
+  display: none;
+}
