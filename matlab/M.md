@@ -88,7 +88,58 @@ L 中的每个元素表示 BW 对应位置的像素所在连通区域的标签�
 
 matlab 代码实现：
 
+> clear;
+> clc;
+> name = 'videoplayback.mp4';
+> outfilename = [name(1:end-4),'_crop.avi'];
+> % 分割视频
+> Crop(name,outfilename);
+> function Crop(name,outfilename)
+> % 读取视频
+> % % name = 'videoplayback.mp4';
+> vid = VideoReader(name);
+> %输出文件名字
+> % outfilename = [name(1:end-4),'_crop.avi'];
+> % 读取第一帧
+> frame = read(vid,1);
+> % 显示第一帧图像
+> imshow(frame);
+> %
+> % h = imrect 开始在当前轴上交互式放置矩形，并返回一个 imrect 对象。
+> % h = imrect;
+> % roi = drawrectangle 创建一个 Rectangle 对象，并允许在当前轴上交互式绘制矩形感兴趣区域 （ROI）。
+> roi = imrect;
+> %获取手动标选框的坐标
+> pos = getPosition(roi);
+> % 在图像上显示选框的位置 红色
+> rectangle('Position', pos, 'LineWidth', 2, 'EdgeColor', 'r');
 >
+> x = pos(1); % 选框左上角 x 坐标
+> y = pos(2); % 选框左上角 y 坐标
+> w = pos(3); % 选框宽度
+> h = pos(4); % 选框高度
+>
+> % 删除该手动选框
+> delete(roi);
+>
+> % 创建视频写入对象
+> writerObj = VideoWriter(outfilename,'Uncompressed AVI');
+> % 设置帧率
+> writerObj.FrameRate = vid.FrameRate;
+>
+> open(writerObj);
+> % 遍历每一帧图像
+> while hasFrame(vid)
+> % 读取当前帧图像
+> frame = readFrame(vid);
+> % 裁剪视频
+> I_roi = imcrop(frame, [x, y, w, h]);
+>
+> % 将裁剪后的图像写入新的视频文件
+> writeVideo(writerObj, I_roi);
+> end
+> close(writerObj);
+> end
 
 ## 选取随机 3 帧制作表格进行分析
 
