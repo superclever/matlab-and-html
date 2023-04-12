@@ -181,7 +181,9 @@ Precision（精确率）、Recalll（召回率）、F1-score 主要用于分类�
 
 ### Precision（精确率）
 
-> pre=TP/(Tp+fp)
+**Precision** 从预测结果角度出发，描述了二分类器预测出来的正例结果中有多少是真实正例，即该二分类器预测的正例有多少是准确的
+
+> Precision = TP/(Tp+fp)
 
 ### 召回率（Recall）
 
