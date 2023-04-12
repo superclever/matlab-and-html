@@ -7,8 +7,10 @@
   width: 100%;
   height: 100%;
   /* background-color: aqua; */
-  background-image: url(/fantasy\ World\ Tree.jpg);
-  background-size:cover;
+  background-image: url(./fantasy\ World\ Tree.jpg);
+  background-size:100% 100%;
+  /* background-size: cover; */
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
@@ -90,6 +92,8 @@
   background-color: inherit;
   /* outline用来清除点击搜索框的时候出现一个黑色小边框 */
   outline: none;
+  color: black;
+  font-weight: 800;
 }
 
 #confirmInput {
