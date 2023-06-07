@@ -180,7 +180,7 @@ Precision（精确率）、Recalll（召回率）、F1-score 主要用于分类�
 | |预测 1|预测 0|
 |---|---|---|
 |真实：1| True Positive (TP) |False Negative (FN)|
-|真实：0| False Poisitive (FP)| False Poisitive (FP)|
+|真实：0| False Poisitive (FP)| True Negatives (TN)|
 **True Positives (TP)：** 正确分类为阳性的阳性实例数。即该数据的真实值为正例，预测值也为正例的情况；
 例如，当一个用户实际上是欺诈用户时，预测它是欺诈用户。
 
